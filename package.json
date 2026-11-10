@@ -13,10 +13,9 @@
     "start": "node app.js",
     "dev": "nodemon app.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "MIT",
-  "description": "",
+  "engines": {
+    "node": ">=18.0.0 <=22.x"
+  },
   "dependencies": {
     "bcryptjs": "^3.0.2",
     "cloudinary": "^1.41.3",

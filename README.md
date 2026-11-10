@@ -93,3 +93,4 @@ A RESTful backend service for the ChefKart web platform, built using **Node.js**
 ## 📄 License
 
 This project is licensed under the [MIT License](LICENSE).
+

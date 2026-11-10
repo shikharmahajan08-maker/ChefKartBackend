@@ -5,16 +5,20 @@ require('dotenv').config();
 
 const connectDB = async () => {
   try {
-    const conn = await mongoose.connect(process.env.MONGODB_URL, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-      serverSelectionTimeoutMS: 30000
+    const mongoUri = process.env.MONGODB_URL;
+    if (!mongoUri) {
+      console.warn("⚠️ Warning: MONGODB_URL is not set in environment variables! Please configure it in your Render dashboard under 'Environment'.");
+      return;
+    }
+
+    const conn = await mongoose.connect(mongoUri, {
+      serverSelectionTimeoutMS: 15000
     });
 
-    console.log(`MongoDB Connected: ${conn.connection.host}`);
+    console.log(`✅ MongoDB Connected: ${conn.connection.host}`);
   } catch (err) {
-    console.error(`Error: ${err.message}`);
-    process.exit(1); // Exit process with failure
+    console.error(`❌ MongoDB Connection Error: ${err.message}`);
+    console.error("Tip: Ensure your MongoDB Atlas cluster allows connections from anywhere (0.0.0.0/0 in Network Access).");
   }
 };
 
