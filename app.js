@@ -1,3 +1,8 @@
+const buffer = require('buffer');
+if (!buffer.SlowBuffer) {
+  buffer.SlowBuffer = buffer.Buffer;
+}
+
 const express = require('express');
 const cors = require('cors');
 const createError = require('http-errors');
