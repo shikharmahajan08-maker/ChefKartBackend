@@ -10,6 +10,7 @@
   },
   "license": "MIT",
   "scripts": {
+    "build": "echo 'Build successful'",
     "start": "node app.js",
     "dev": "nodemon app.js"
   },
