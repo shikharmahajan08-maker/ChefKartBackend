@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
-const User = require("../models/User.model");
+const User = require("../models/User.Model");
 
 const JWT_SECRET = process.env.JWT_SECRET || "belowisasecretkey";
 
